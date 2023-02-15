@@ -5,6 +5,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivary/cart_item.dart';
 import 'package:food_delivary/home_page.dart';
+import 'package:food_delivary/main_screen_2.dart';
 // import 'package:food_delivary/screen_3.dart';
 
 class DetailedPage extends StatefulWidget {
@@ -44,7 +45,7 @@ class _DetailedPageState extends State<DetailedPage> {
                             Navigator.of(context)
                                 .pushReplacement(MaterialPageRoute(
                               builder: (context) {
-                                return HomePage();
+                                return Screen2();
                               },
                             ));
                           },

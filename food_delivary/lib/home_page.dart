@@ -7,6 +7,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:food_delivary/cart_item.dart';
 import 'package:food_delivary/detailed_page.dart';
 import 'package:food_delivary/empty.dart';
+import 'package:food_delivary/main_screen_2.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -160,57 +161,7 @@ class _HomePageState extends State<HomePage> {
     _size = MediaQuery.of(context).size;
 
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.deepOrangeAccent,
-        items: [
-          BottomNavigationBarItem(
-            icon: IconButton(
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) {
-                    return HomePage();
-                  },
-                ));
-              },
-              icon: Icon(
-                Icons.home_outlined,
-                color: Colors.deepOrangeAccent,
-                size: 30,
-              ),
-            ),
-            label: "",
-          ),
-          BottomNavigationBarItem(
-              icon: NavigationIcon(icon:  Icon(
-                Icons.explore_outlined,
-                size: 30,
-              ),),
-              label: ""),
-          BottomNavigationBarItem(
-              icon: NavigationIcon(icon: Image.network(
-                "https://cdn-icons-png.flaticon.com/512/3126/3126504.png",
-                width: 40,
-              ),),
-              // icon: Icon(Icons.qr_code_scanner),
-              label: ""),
-          BottomNavigationBarItem(
-            icon: NavigationIcon(icon: Image.network(
-              "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS1xW5OM-JVwufBprYmQoLTxLwGi4jfQQHE79V3wNtGOmiO9u0y",
-              width: 30,
-            ),),
-            label: "",
-          ),
-          BottomNavigationBarItem(
-              icon: NavigationIcon(icon: Transform.rotate(
-                  angle: pi * 0.2,
-                  child: Icon(
-                    Icons.notifications_active_outlined,
-                    size: 30,
-                  )),),
-              label: ""),
-        ],
-      ),
+
       appBar: AppBar(
         title: Container(
           child: Text(
@@ -467,17 +418,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget NavigationIcon({icon}) {
-    return IconButton(
-        onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) {
-              return Empty();
-            },
-          ));
-        },
-        icon: icon);
-  }
+
 
   Widget Cont({name}) {
     return InkWell(

@@ -12,6 +12,8 @@ class CartItems extends StatefulWidget {
 }
 //Text(widget.cartdata[0]['name'].toString()),
 
+
+
 class _CartItemsState extends State<CartItems> {
   @override
   Widget build(BuildContext context) {
@@ -52,13 +54,26 @@ class _CartItemsState extends State<CartItems> {
                                 style: TextStyle(fontSize: 15),
                               ),
                               Text(
-                                cart[index]['price'].toString(),
+                               "\$"+ cart[index]['price'].toString(),
                                 style: TextStyle(fontSize: 15),
                               ),
                             ],
                           ),
                         ),
-
+                        Expanded(
+                          child: Align(
+                            alignment: AlignmentDirectional.topEnd,
+                            child: InkWell(
+                              onTap: () {
+                                setState(() {
+                                  cart.remove(cart[index]);
+                                  print(cart.length);
+                                });
+                              },
+                              child: Icon(Icons.close_rounded),
+                            ),
+                          ),
+                        )
                       ],
                     ),
                   ),

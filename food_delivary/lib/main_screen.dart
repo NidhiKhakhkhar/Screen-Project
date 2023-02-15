@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivary/home_page.dart';
+import 'package:food_delivary/main_screen_2.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -39,7 +40,7 @@ class MainScreen extends StatelessWidget {
   
               onPressed: () {
                 Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
-                  return HomePage();
+                  return Screen2();
                 },));
               },
               child: Text("Get Started",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),),
